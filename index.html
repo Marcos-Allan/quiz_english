@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="imgs/icon.png" type="image/x-icon">
+    <title>Quiz</title>
+    
+    <!--BIBLIOTECA ANIMATE.CSS ON-LINE
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    -->
+      
+    <!--BIBLIOTECA ANIMATE.CSS OFF-LINE -->
+    <link rel="stylesheet" href="css/animate.min.css" />
+    
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+    <script src="js/script.js" type="module" defer></script>
+  </head>
+  <body>
+    
+    <div class="compartilhar_site">
+      <img class="icn_comp" src="imgs/compartilha_icon.png" alt="icone de compartilhar" />
+    </div>
+
+    <div class="comp">
+      <button class="btn_fec">Fechar</button>
+      <img src="imgs/QrCode_Quiz_Hidreletricidade.png" alt="qrcode da págin atual" />
+    </div>
+
+    <p class="timer">
+      <span class="hours">00</span>:
+      <span class="minutes">00</span>:
+      <span class="seconds">00</span>
+    </p>
+    
+    <div class="placar">
+
+      <div class="correct_symbol">
+        Acertos: <p class="correct_symbol_p">0</p>
+      </div>
+      
+      <div class="error_symbol">
+        Erros: <p class="error_symbol_p">0</p>
+      </div>
+
+    </div>
+    
+    <h2 class="animation_entrada">Quiz <br>English</h2>
+
+    <main class="animation_entrada">
+      
+      <div class="content">
+        <p class="message">Você já jogou uma vez não é justo jogar novamente</p>
+        
+        <button class="btn_iniciar">Iniciar</button>
+
+        <span class="spnQtd"></span>
+        
+        <span class="question"></span>
+        <span class="answers"></span>
+
+      </div>
+
+      <div class="finish">
+        <span></span>
+        <button>Finalizar</button>
+      </div>
+    </main>
+  </body>
+</html>

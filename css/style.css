@@ -1,0 +1,248 @@
+/*IMPORTAÇÃO DA FONTE USADA*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*VARIÁVEIS DE CORES USADAS*/
+:root{
+  --color1: #f2f2f2;
+  --color2: #a6a6a6;
+  --color3: #8c8c8c;
+  --color4: #404040;
+  --color5: #0d0d0d;
+  --color5_1: #0d0d0dcc;
+}
+
+/*RESET*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  background-image: linear-gradient(45deg, var(--color5)50%, var(--color4)50%);
+  position: relative;
+}
+
+div.compartilhar_site {
+  position: absolute;
+  top: 10%;
+  right: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color1);
+  color: var(--color2);
+  width: 60px;
+  height: 60px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+div.compartilhar_site:hover {
+  scale: 1.2;
+}
+
+div.compartilhar_site > img.icn_comp {
+  width: 32px;
+}
+
+div.comp {
+  position: absolute;
+  transition: .35s;
+  top: 0;
+  left: -100vw;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255,255,255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+div.comp > button.btn_fec {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 4px 20px;
+  background-color: #db3a3a;
+  color: rgb(255,255,255);
+  margin: 30px;
+  font-size: 1.3em;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+div.comp > button.btn_fec:hover {
+  scale: 1.2;
+}
+
+div.comp > img {
+  width: 70%;
+  max-width: 300px;
+}
+
+div.placar {
+  border-radius: 8px;
+  overflow: hidden;
+  width: 90%;
+  max-width: 500px;
+  border: 1px solid var(--color1);
+  margin-bottom: 40px;
+  /* right: 20%; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+/* ARRUMAR ESSA PARTE DOS ACERTOS E DOS ERROS */
+div.placar > div.correct_symbol{
+  background-color: var(--color1);
+  width: 100%;
+  color: var(--color5);
+  text-align: left;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.placar > div.error_symbol {
+  background-color: var(--color4);
+  width: 100%;
+  color: var(--color1);
+  text-align: left;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h2 {
+  color: var(--color1);
+  font-weight: 200;
+  text-align: center;
+}
+
+.animation_entrada{
+/*ANIMAÇÃO DE ENTRADA*/
+  animation-name: backInDown;
+  animation-duration: 2s;
+}
+
+.animation_correct{
+/*ANIMAÇÃO DE ACERTO*/
+  animation-name: tada;
+  animation-duration: 500ms;
+  background-color: rgb(108, 230, 108) !important;
+  color: white !important;
+}
+
+.animation_erro{
+/*ANIMAÇÃO DE ERRO*/
+  animation-name: fadeOutDown;
+  animation-duration: 500ms;
+  background-color: rgb(239, 34, 34) !important;
+  color: white !important;
+}
+
+main {
+  background-color: var(--color5_1);
+  border: 2px solid var(--color2);
+  padding: 10px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 350px;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p.timer {
+  font-size: 2.4em;
+  color: var(--color1);
+  margin-bottom: 20px;
+}
+
+p.message {
+  text-align: center;
+  padding: 0px 30px;
+  font-size: 1.3em;
+  color: var(--color1);
+  display: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  color: var(--color2);
+}
+
+.content > .spnQtd {
+  width: 90%;
+  color: var(--color1);
+  text-align: left;
+}
+
+.content > .answers {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 5px;
+}
+
+button.answer {
+  width: 100%;
+  text-align: start;
+  padding: 10px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--color4);
+  color: var(--color2);
+}
+
+div.finish {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--color1);
+}
+
+div.finish > button, button.btn_iniciar {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--color4);
+  color: var(--color2);
+}
+
+button.btn_iniciar {
+  width: 50%;
+}
